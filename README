@@ -1,0 +1,18 @@
+Cucumber syntax highlighting for gedit
+
+Syntax highlighting for Cucumber feature files in gedit using 
+gtksourceview-2.0. Tested on Ubuntu x64 8.04. 
+
+INSTALLATION
+
+1. Copy the feature.lang file to /usr/share/gtksourceview-2.0/language-specs
+2. Restart gedit
+
+CREDITS
+
+Special thanks to Ben Mabey who is the author of the Textmate bundle who I 
+gathered the language translations from at his github repo here: 
+http://github.com/bmabey/cucumber-tmbundle/tree/master
+
+Also a big thanks to Carl Pattie for his assistance with the more tricky parts 
+of the Regex matching :)
