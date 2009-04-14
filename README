@@ -8,6 +8,12 @@ INSTALLATION
 1. Copy the feature.lang file to /usr/share/gtksourceview-2.0/language-specs
 2. Restart gedit
 
+OTHER PROJECTS
+
+Gmate has a cucumber syntax 
+highlighting option as well as many 
+other languages here: http://github.com/lexrupy/gmate/tree/master
+
 CREDITS
 
 Special thanks to Ben Mabey who is the author of the Textmate bundle who I 
