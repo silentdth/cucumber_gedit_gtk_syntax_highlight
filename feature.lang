@@ -81,13 +81,13 @@
     <context id="scenario-line" style-ref="keyword">
       <match>\b(A|AN|Aber|Abstrakt Scenario|Ale|Allora|Alors|Als|And|And y'all|Antecedentes|Arabic|Atunci|B4|BUT|Background|Baggrund|Bahasa Indonesia|Bakgrund|Bakgrunn|Beispiele|Bet|But|But y'all|Cand|Chinese simplified|Contoh|Context|Contexto|Cuando|Cymraeg|Când|DEN|Daca|Dacă|Dado|Dan|Dane|Danish|Dann|Dar|Dato|Dengan|Deutsch|Duota|Dutch|E|EXAMPLZ|Eeldades|Ejemplos|Eksempler|En|Enghreifftiau|English|Entonces|Então|Esquema del escenario|Esquema do Cenário|Estonian|Et|Etant donné|Examples|Exempel|Exemples|Exemplos|Finnish|French|GIVN|Gegeben sei|Gegeven|German|Gitt|Given|Given y'all|Givet|Indonesian|Ir|Italian|Ja|Japanese|Jeżeli|Kai|Ketika|Korean|Kui|Kuid|Kun|LOLCAT|Lithuanian|Lorsque|MISHUN SRSLY|Ma|Maar|Mais|Maka|Mas|Men|Mutta|Nederlands|Niin|Norwegian|När|Når|Och|Og|Oletetaan|Ond|Oraz|Pavyzdžių|Pero|Più esempi|Polish|Portuguese|Pryd|Quando|Romanian|Romanian (diacritical)|Russian|Scenario Outline|Scénario esquisse|Shift_JIS|Si|Siis|Skenario konsep|Spanish|Svenska|Swedish|Szenariogrundriss|Så|Tada|Tapaukset|Tapausaihio|Tapi|Texan|Then|Then y'all|UTF-8|Und|WEN|Welsh|Wenn|When|When y'all|Wtedy|Y|Yna|anrhegedig a|dansk|eesti keel|español|français|italiano|lietuvių kalba|norsk|polski|português|română|română (diacritical)|suomi|Și|Если|И|Но|Сначала|То|русский язык|اذاً|العربية|بفرض|لكن|متى|و|かつ|しかし|ならば|もし|中文|他のサンプル|但是|假如|前提|当|日本語|而且|那么|그러면|그리고|만일|조건|하지만|한국어)\b</match>
     </context>
-    <context id="cucumber-table" style-ref="table-border">
-      <start>\|(.*?)\|\s*$</start>
-      <end>\|$</end>
+    <context id="cucumber-table" style-ref="table-border" end-at-line-end="false">
+    <start>\|(.*)\|</start>
+    <end>^\s*\b</end>
       <include>
-        <context style-ref="variable" sub-pattern="1" where="start"/>
-        <context id="table-content" style-ref="string" extend-parent="false">
-          <match>[^\|]+</match>
+        <context sub-pattern="1" style-ref="variable" where="start"/>
+        <context id="table-data" style-ref="string">
+          <match>\b[^\|]+\b</match>
         </context>
       </include>
     </context>
